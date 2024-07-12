@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<script src='jquery-3.3.1.min.js'></script>
+		<link rel="stylesheet" href="app.css">
+		<script async src="app.js"></script>
+		<title>Gateway Configuration</title>
+	</head>
+    <body>
+        <header> Gateway Configuration</header>
+        
+        <hr>
+        <div id="numberNode">
+            <h2>Set Number Of Nodes</h2>
+            <section>
+                <form id="NumberNodes">
+                    <label for="Number">Number:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="10">
+                    <input type="submit" value="Submit">
+                  </form>
+            </section>
+        </div>
+        <hr>
+        <div id="WiFiConnect">
+            <h2>ESP32 WiFi Connect</h2>
+            <section>
+                <input id="connect_ssid" type="text" maxlength="32" placeholder="SSID" value="">
+                <input id="connect_pass" type="password" maxlength="64" placeholder="Password" value="">
+                <input type="checkbox" onclick="showPassword()">Show Password
+            </section>
+            <div class="buttons">
+                <input id="connect_wifi" type="button" value="Connect" />
+            </div>
+            <div id="wifi_connect_credentials_errors"></div>
+            <h4 id="wifi_connect_status"></h4>
+        </div>
+            
+        <div id="ConnectInfo">
+            <section>
+                <div id="connected_ap_label"></div> <div id="connected_ap"></div>
+            </section>
+            <div id="ip_address_label"></div> <div id="wifi_connect_ip"></div>
+            <div id="netmask_label"></div> <div id="wifi_connect_netmask"></div>
+            <div id="gateway_label"></div> <div id="wifi_connect_gw"></div>
+            <div class="buttons">
+                <input id="disconnect_wifi" type="button" value="Disconnect" />
+            </div>
+        </div>
+        <hr>
+
+        <div id="MQTTConnect">
+            <h2>ESP32 MQTT Connect</h2>
+            <section>
+                <div>
+                    <input id="host" type="text" maxlength="32" placeholder="HOST" value="">
+                    <input id="client-id" type="text" maxlength="32" placeholder="ClientID" value="">
+                </div>
+                <div>
+                    <input id="username" type="text" maxlength="32" placeholder="Username" value="">
+                    <input id="password" type="password" maxlength="64" placeholder="Password" value="">
+                    <input type="checkbox" onclick="showPassword()">Show Password
+                </div>
+            </section>
+            <div class="buttons">
+                <input id="connect_mqtt" type="button" value="Connect" />
+            </div>
+            <div id="mqtt_connect_credentials_errors"></div>
+            <h4 id="mqtt_connect_status"></h4>
+        </div>
+            
+        <div id="MQTTConnectInfo">
+            <section>
+                <div id="connected_ap_label"></div> <div id="connected_ap"></div>
+            </section>
+            <div id="ip_address_label"></div> <div id="wifi_connect_ip"></div>
+            <div id="netmask_label"></div> <div id="wifi_connect_netmask"></div>
+            <div id="gateway_label"></div> <div id="wifi_connect_gw"></div>
+            <div class="buttons">
+                <input id="disconnect_mqtt" type="button" value="Disconnect" />
+            </div>
+        </div>
+        <hr>
+    </body>
+</html>
